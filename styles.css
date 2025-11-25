@@ -1,0 +1,144 @@
+/* Основное */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    color: #e4e4e4;
+}
+
+h1, h2, h3 {
+    color: #ffd700;
+}
+
+/* Header/Footer */
+.block-header, .block-footer {
+    background-color: #0f0f1a;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Глобальная сетка */
+.main-container {
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    gap: 15px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.nav-1, .content-main, .sidebar {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Колонки */
+.nav-1 {
+    background-color: #2c2c54;
+}
+
+.sidebar {
+    background-color: #3e3e78;
+}
+
+.content-main {
+    background-color: #1a1a2e;
+}
+
+/* Верхнее меню */
+.nav-2 {
+    display: flex;
+    justify-content: center;
+    background-color: #5c5c99;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.nav-2 h3 {
+    margin: 0;
+}
+
+/* Скриншоты */
+.image-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.img-block {
+    flex: 1;
+    height: 140px;
+    background-color: #7979a3;
+    border: 2px solid #ffd700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ————————————————————————————— */
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .main-container {
+        width: 95%;
+        grid-template-columns: 20% 60% 20%;
+    }
+}
+
+/* ————————————————————————————— */
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+
+    .main-container {
+        width: 100%;
+        margin: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "content"
+            "aside"
+            "nav1";
+    }
+
+    /* Мобильное меню */
+    .nav-1 h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-1 ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-1 li a {
+        color: #ffd700;
+        text-decoration: none;
+        padding: 6px 12px;
+        border: 1px solid #ffd700;
+        border-radius: 4px;
+        display: block;
+    }
+
+    /* Скриншоты в колонку */
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    .img-block {
+        height: 160px;
+        margin: 5px 0;
+    }
+
+    /* Меньше отступов */
+    .block-header, .block-footer {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
